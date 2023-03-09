@@ -77,6 +77,7 @@ All the code is located in the src folder. The dataset is located in the dataset
 │   ├── gitignore
 ├── doc
 │   ├── Final_Report_of_Bachelor_Thesis.pdf
+│   ├── Gantt_diagram.xlsx
 ├── src
 │   ├── notebook.ipynb
 ├── gitignore
