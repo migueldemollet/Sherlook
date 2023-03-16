@@ -78,6 +78,9 @@ All the code is located in the src folder. The dataset is located in the dataset
 ├── doc
 │   ├── Final_Report_of_Bachelor_Thesis.pdf
 │   ├── Gantt_diagram.xlsx
+├── model
+│   ├── detect_manipulated_images_model.h5
+│   ├── gitignore
 ├── src
 │   ├── notebook.ipynb
 ├── gitignore
@@ -87,7 +90,7 @@ All the code is located in the src folder. The dataset is located in the dataset
 ```
 
 # Requirements 📋
-* Python 3.9 or later
+* Python 3.9
 * All the required libraries are in the requirements.txt file
     * opencv-python
     * numpy

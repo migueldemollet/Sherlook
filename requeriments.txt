@@ -1,6 +1,8 @@
 opencv-python
-numpy
+numpy==1.21.6
 matplotlib
 Pillow
 Pandas
 kaggle
+tensorflow
+scikit-learn
