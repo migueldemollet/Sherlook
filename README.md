@@ -75,12 +75,12 @@ All the code is located in the src folder. The dataset is located in the dataset
 │   |   ├── Tp_D_CND_M_N_art00076_art00077_10289.jpg
 │   |   ├── ...
 │   ├── gitignore
-├── doc
-│   ├── Final_Report_of_Bachelor_Thesis.pdf
-│   ├── Gantt_diagram.xlsx
 ├── model
 │   ├── detect_manipulated_images_model.h5
 │   ├── gitignore
+├── doc
+│   ├── Final_Report_of_Bachelor_Thesis.pdf
+│   ├── Gantt_diagram.xlsx
 ├── src
 │   ├── notebook.ipynb
 ├── gitignore
