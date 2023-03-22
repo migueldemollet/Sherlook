@@ -1,5 +1,0 @@
-https://www.kaggle.com/datasets/sophatvathana/casia-dataset
-
-https://github.com/namtpham/casia2groundtruth
-https://drive.google.com/u/0/uc?id=1IDUgcoUeonBxx2rASX-_QwV9fhbtqdY8&export=download
-
