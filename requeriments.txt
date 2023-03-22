@@ -1,8 +1,8 @@
-opencv-python
+opencv-python==4.7.0.68
 numpy==1.21.6
-matplotlib
-Pillow
-Pandas
-kaggle
-tensorflow
+matplotlib==3.6.2
+Pillow==9.2.0
+Pandas==1.5.2
+kaggle==1.5.13
+tensorflow==2.11.0
 scikit-learn

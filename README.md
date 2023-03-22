@@ -25,7 +25,7 @@ This project aims to develop a deep learning model that can detect modified imag
 
 The dataset used in this project is the [Casia dataset](https://www.kaggle.com/datasets/sophatvathana/casia-dataset), which contains 12,614 images. The images are divided into two folders: Au (original images) and Tp (modified images).
 
-Alternatively, you can download it from [here]() where you will have the exact same dataset as the one used in this project, with some minor modifications.
+Alternatively, you can download it from [here](https://1drv.ms/f/s!ApMviAlZmRwE6gLHz13fOw0uT04H?e=IQRgMS) where you will have the exact same dataset as the one used in this project, with some minor modifications.
 
 The dataset includes different categories of images, such as:
 
@@ -76,6 +76,10 @@ All the code is located in the src folder. The dataset is located in the dataset
 │   |   ├── ...
 │   ├── gitignore
 ├── model
+│   |   ├──checkpoints
+│   |   ├── logs
+│   ├── detect_manipulated_images_model_mobileNet.h5
+│   ├── detect_manipulated_images_model_resNet50.h5
 │   ├── detect_manipulated_images_model.h5
 │   ├── gitignore
 ├── doc
