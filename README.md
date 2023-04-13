@@ -76,12 +76,15 @@ All the code is located in the src folder. The dataset is located in the dataset
 │   |   ├── ...
 │   ├── gitignore
 ├── model
-│   |   ├──checkpoints
+│   |   ├── checkpoints
 │   |   ├── logs
-│   ├── detect_manipulated_images_model_mobileNet.h5
-│   ├── detect_manipulated_images_model_resNet50.h5
-│   ├── detect_manipulated_images_model.h5
-│   ├── gitignore
+│   |   ├── ela_models
+│   |   |   ├── detect_manipulated_images_model_scratch.h5
+│   |   |   ├── ...
+│   |   ├── wavelet_models
+│   |   |   ├── detect_manipulated_images_model_scratch.h5
+│   |   |   ├── ...
+│   |   ├── gitignore
 ├── doc
 │   ├── Final_Report_of_Bachelor_Thesis.pdf
 │   ├── Gantt_diagram.xlsx
@@ -90,22 +93,22 @@ All the code is located in the src folder. The dataset is located in the dataset
 │   ├── models.ipynb
 ├── result
 │   ├── ela_models
-│   |   ├──confusion_matrix
-│   |   |   ├──confusion_matrix.png
-│   |   |   ├──...
+│   |   ├── confusion_matrix
+│   |   |   ├── confusion_matrix.png
+│   |   |   ├── ...
 │   |   ├── heatmap
-│   |   |   ├──heatmap.png
-│   |   |   ├──...
+│   |   |   ├── heatmap.png
+│   |   |   ├── ...
 │   |   ├── metrics
-│   |   |   ├──metrics.png
-│   |   |   ├──...
+│   |   |   ├── metrics.png
+│   |   |   ├── ...
 │   ├── wavelet_models
-│   |   ├──confusion_matrix
-│   |   |   ├──confusion_matrix.png
-│   |   |   ├──...
+│   |   ├── confusion_matrix
+│   |   |   ├── confusion_matrix.png
+│   |   |   ├── ...
 │   |   ├── metrics
-│   |   |   ├──metrics.png
-│   |   |   ├──...
+│   |   |   ├── metrics.png
+│   |   |   ├── ...
 ├── gitignore
 ├── LICENSE
 ├── README.md
