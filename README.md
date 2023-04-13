@@ -88,6 +88,24 @@ All the code is located in the src folder. The dataset is located in the dataset
 ├── src
 │   ├── analisys.ipynb
 │   ├── models.ipynb
+├── result
+│   ├── ela_models
+│   |   ├──confusion_matrix
+│   |   |   ├──confusion_matrix.png
+│   |   |   ├──...
+│   |   ├── heatmap
+│   |   |   ├──heatmap.png
+│   |   |   ├──...
+│   |   ├── metrics
+│   |   |   ├──metrics.png
+│   |   |   ├──...
+│   ├── wavelet_models
+│   |   ├──confusion_matrix
+│   |   |   ├──confusion_matrix.png
+│   |   |   ├──...
+│   |   ├── metrics
+│   |   |   ├──metrics.png
+│   |   |   ├──...
 ├── gitignore
 ├── LICENSE
 ├── README.md
@@ -113,9 +131,9 @@ If you don't have some of these libraries, you can install them manually or by r
 
 > git clone https://github.com/migueldemollet/real-or-fake-image-machine-learning.git
 
-2. Go to the directory where the code is located.
+2. Go to the directory.
 
-> cd real-or-fake-image-machine-learning/src
+> cd real-or-fake-image-machine-learning
 
 3. Install the required libraries.
  
