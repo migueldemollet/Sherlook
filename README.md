@@ -74,10 +74,16 @@ All the code is located in the src folder. The dataset is located in the dataset
 │   |   ├── Tp_D_CND_M_N_ani00018_sec00096_00138.jpg
 │   |   ├── Tp_D_CND_M_N_art00076_art00077_10289.jpg
 │   |   ├── ...
+│   ├── test
+│   |   ├── me_x_3.jpg
 │   ├── gitignore
 ├── model
 │   |   ├── checkpoints
 │   |   ├── logs
+│   |   ├── custom_models
+│   |   |   ├── mobilenet
+│   |   |   |   ├── model_arquitecture.json
+│   |   |   |   ├── model_weights.h5
 │   |   ├── ela_models
 │   |   |   ├── detect_manipulated_images_model_scratch.h5
 │   |   |   ├── ...
@@ -124,6 +130,10 @@ All the code is located in the src folder. The dataset is located in the dataset
     * Pillow
     * Pandas
     * kaggle
+    * tensorflow
+    * scikit-learn
+    * PyWavelets
+    * keras-tuner
 
 If you don't have some of these libraries, you can install them manually or by running the following command:
     
