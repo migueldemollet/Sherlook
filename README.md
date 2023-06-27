@@ -20,6 +20,7 @@ This project aims to develop a deep learning model that can detect modified imag
 # What is this? 🤔
 
 # Demo 📺
+[![Watch the video](https://img.youtube.com/vi/TBBw0aDBIbg/maxresdefault.jpg)](https://youtu.be/TBBw0aDBIbg)
 
 # Dataset 💾
 
