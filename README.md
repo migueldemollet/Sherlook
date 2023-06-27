@@ -62,7 +62,42 @@ This is because images can be modified in two ways:
 * Same: The image is modified using the same image.
 
 # Results 📊
+Various experiments have been conducted with different architectures and image preprocessing techniques. The first part of the text represents the architecture used, while the last part represents the image preprocessing technique. E stands for Error Level Analysis, W stands for Wavelet, and YUV stands for utilizing the YUV color space.
 
+| Modelo      | Épocas | Tiempo por Época | Accuracy | Loss | Precisión | Recall | AUC | PRC | F1-Score |
+|-------------|--------|-----------------|----------|------|-----------|--------|-----|-----|----------|
+| ENB1\_v2\_E | 13     | 99s             | 0.93     | 0.21 | 0.95      | 0.94   | 0.98| 0.98| 0.93     |
+| ENB3\_E     | 14     | 126s            | 0.92     | 0.20 | 0.95      | 0.90   | 0.98| 0.98| 0.92     |
+| XC\_E       | 12     | 147s            | 0.90     | 0.55 | 0.90      | 0.93   | 0.93| 0.94| 0.92     |
+| MN\_E       | 12     | 64s             | 0.91     | 0.22 | 0.99      | 0.84   | 0.98| 0.99| 0.91     |
+| MN\_YUV     | 33     | 45s             | 0.92     | 0.23 | 0.90      | 0.92   | 0.97| 0.97| 0.91     |
+| ENVB2\_E    | 31     | 104s            | 0.89     | 0.30 | 0.84      | 0.98   | 0.97| 0.97| 0.91     |
+| ENB1\_E     | 31     | 100s            | 0.89     | 0.31 | 0.85      | 0.84   | 0.97| 0.97| 0.90     |
+| XC\_YUV     | 20     | 130s            | 0.82     | 0.83 | 0.78      | 0.98   | 0.91| 0.90| 0.87     |
+| V16\_E      | 15     | 25s             | 0.87     | 0.38 | 0.80      | 0.86   | 0.93| 0.87| 0.83     |
+| ENV2B1\_E   | 29     | 60s             | 0.78     | 0.68 | 0.71      | 1      | 0.95| 0.94| 0.83     |
+| ENB1\_YUV   | 18     | 104s            | 0.63     | 0.69 | 0.62      | 1      | 0.49| 0.58| 0.77     |
+| R50\_E      | 7      | 32s             | 0.83     | 0.46 | 0.81      | 0.72   | 0.93| 0.88| 0.76     |
+| XC\_W       | 11     | 158s            | 0.62     | 0.61 | 0.62      | 1      | 0.50| 0.62| 0.76     |
+| V16\_W      | 20     | 108s            | 0.62     | 0.67 | 0.62      | 1      | 0.50| 0.62| 0.76     |
+| ENB1\_W     | 16     | 125s            | 0.61     | 0.67 | 0.91      | 1      | 0.49| 0.60| 0.76     |
+| V16\_YUV    | 14     | 89s             | 0.63     | 0.65 | 0.65      | 0.90   | 0.61| 0.70| 0.75     |
+| Scrath\_W   | 15     | 42s             | 0.60     | 0.68 | 0.56      | 1      | 0.50| 0.60| 0.75     |
+| MN\_W       | 20     | 67s             | 0.60     | 0.68 | 0.60      | 1      | 0.50| 0.60| 0.75     |
+| R50\_W      | 14     | 90s             | 0.60     | 0.68 | 0.60      | 1      | 0.50| 0.60| 0.75     |
+| Scrath\_E   | 12     | 43s             | 0.74     | 1.64 | 0.94      | 0.32   | 0.85| 0.82| 0.48     |
+
+Visual results have been obtained to provide a visual representation of the potential modifications made. The best result is showcased, highlighting the specific modification that has been implemented. These visual results serve as a demonstration of how the modifications impact the overall output.
+
+![grad-cam](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/resources/grad-cam.png?raw=true)
+
+The confusion matrix will be presented to further analyze and understand the test results. The confusion matrix provides a detailed breakdown of the model's predictions, showing the number of true positive, true negative, false positive, and false negative instances. It offers valuable information on the model's performance, allowing for a deeper understanding of its accuracy and potential areas of improvement.
+
+![confusion matrix](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/resources/confusion_matrix.png?raw=true)
+
+The model training process was completed in approximately 25 minutes. The training and validation metrics are provided to evaluate the performance of the model. These metrics offer insights into how well the model was trained and how it performed on both the training and validation datasets.
+
+![metrics](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/resources/metrics.png?raw=true)
 # Project Structure 📁
 All the code is located in the src folder. The dataset is located in the dataset folder. The doc folder contains the final report of the project. The requirements.txt file contains all the required libraries to run the code. The gitignore file contains the files that are not uploaded to the repository. The README.md file is the file you are currently reading.
 ```
