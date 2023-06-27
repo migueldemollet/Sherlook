@@ -18,6 +18,9 @@ This project aims to develop a deep learning model that can detect modified imag
    * [Bibliography](#bibliography-📚)
 
 # What is this? 🤔
+This repository showcases the work and results of implementing a deep learning model using TensorFlow. The primary objective of this project is to detect whether an image has been modified, either by software or by an AI, with the aim of combating the spread of fake news. By leveraging advanced techniques in deep learning, the model is trained to analyze image features and accurately classify images as either authentic or modified. The repository provides a comprehensive overview of the model architecture, training process, evaluation metrics, and the implementation code. The ultimate goal is to contribute to the development of tools that can aid in verifying the authenticity of images, thereby helping to mitigate the impact of fake news in various domains.
+
+If you would like to delve deeper into the details of this project, you can refer to the accompanying paper, which can be accessed at the following link: [Paper](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/doc/Final_Report_of_Bachelor_Thesis.pdf). The paper provides comprehensive information about the methodology, experimental setup, results, and analysis, offering a more in-depth understanding of the project's contributions and findings.
 
 # Demo 📺
 [![Watch the video](https://img.youtube.com/vi/TBBw0aDBIbg/maxresdefault.jpg)](https://youtu.be/TBBw0aDBIbg)
@@ -207,7 +210,7 @@ using conda :
 
 4. Run the code.
 
-> 
+> python3 src/main.py
 
 # Built With 🛠️
 
@@ -217,10 +220,11 @@ vscode - The code editor used
 This project is under the MIT License - see the [LICENSE](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/LICENSE) file for details
 
 # How to contribute 🤝
-
-# Citing 📜
+If you want to contribute to this project, you create a pull request. All contributions are welcome.
 
 # Support 🤝
+- **Jordi Serra Raiz** - Tutor of the project - [Jordi Serra Raiz](https://www.linkedin.com/in/jordiserraruiz/)
+- **Laia Guerreo Candela** - Provider of AI-generated modified images and logo design.- [Laia Guerreo Candela](https://www.linkedin.com/in/laiaguerrerocandela/)
 
 # Authors ✒️
 * **Miguel del Arco** - [migueldemollet](https://github.com/migueldemollet)
