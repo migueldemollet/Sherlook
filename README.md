@@ -92,15 +92,15 @@ Various experiments have been conducted with different architectures and image p
 
 Visual results have been obtained to provide a visual representation of the potential modifications made. The best result is showcased, highlighting the specific modification that has been implemented. These visual results serve as a demonstration of how the modifications impact the overall output.
 
-![grad-cam](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/resources/grad-cam.png?raw=true)
+![grad-cam](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/result/grad-cam.png?raw=true)
 
 The confusion matrix will be presented to further analyze and understand the test results. The confusion matrix provides a detailed breakdown of the model's predictions, showing the number of true positive, true negative, false positive, and false negative instances. It offers valuable information on the model's performance, allowing for a deeper understanding of its accuracy and potential areas of improvement.
 
-![confusion matrix](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/resources/confusion_matrix.png?raw=true)
+![confusion matrix](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/result/confusion_matrix.png?raw=true)
 
 The model training process was completed in approximately 25 minutes. The training and validation metrics are provided to evaluate the performance of the model. These metrics offer insights into how well the model was trained and how it performed on both the training and validation datasets.
 
-![metrics](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/resources/metrics.png?raw=true)
+![metrics](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/result/metrics.png?raw=true)
 # Project Structure 📁
 All the code is located in the src folder. The dataset is located in the dataset folder. The doc folder contains the final report of the project. The requirements.txt file contains all the required libraries to run the code. The gitignore file contains the files that are not uploaded to the repository. The README.md file is the file you are currently reading.
 ```
@@ -114,12 +114,11 @@ All the code is located in the src folder. The dataset is located in the dataset
 │   |   ├── Tp_D_CND_M_N_art00076_art00077_10289.jpg
 │   |   ├── ...
 │   ├── test
+│   |   ├── cat.jpg
 │   |   ├── me_x_3.jpg
 │   |   ├── edited_by_ia.jpg
 │   ├── gitignore
 ├── model
-│   |   ├── checkpoints
-│   |   ├── logs
 │   |   ├── custom_models
 │   |   |   ├── efficientnetB3
 │   |   |   |   ├── model_arquitecture.json
@@ -148,23 +147,9 @@ All the code is located in the src folder. The dataset is located in the dataset
 │   ├── models_wavelet.ipynb
 │   ├── models_yuv_custom.ipynb
 ├── result
-│   ├── ela_models
-│   |   ├── confusion_matrix
-│   |   |   ├── confusion_matrix.png
-│   |   |   ├── ...
-│   |   ├── heatmap
-│   |   |   ├── heatmap.png
-│   |   |   ├── ...
-│   |   ├── metrics
-│   |   |   ├── metrics.png
-│   |   |   ├── ...
-│   ├── wavelet_models
-│   |   ├── confusion_matrix
-│   |   |   ├── confusion_matrix.png
-│   |   |   ├── ...
-│   |   ├── metrics
-│   |   |   ├── metrics.png
-│   |   |   ├── ...
+│   ├── confusion_matrix.png
+│   ├── grad-cam.png
+│   ├── metrics.png
 ├── gitignore
 ├── LICENSE
 ├── README.md
