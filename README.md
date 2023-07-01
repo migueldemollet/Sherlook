@@ -90,6 +90,8 @@ Various experiments have been conducted with different architectures and image p
 | R50\_W      | 14     | 90s             | 0.60     | 0.68 | 0.60      | 1      | 0.50| 0.60| 0.75     |
 | Scrath\_E   | 12     | 43s             | 0.74     | 1.64 | 0.94      | 0.32   | 0.85| 0.82| 0.48     |
 
+If you want test the others models you can download the models [here](https://drive.google.com/file/d/1-rf4MdVF-zJcjfLtEm8QyWMkPcemDtOs/view?usp=sharing)
+
 Visual results have been obtained to provide a visual representation of the potential modifications made. The best result is showcased, highlighting the specific modification that has been implemented. These visual results serve as a demonstration of how the modifications impact the overall output.
 
 ![grad-cam](https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/result/grad-cam.png?raw=true)
