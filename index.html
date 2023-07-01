@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHERLOOK</title>
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        th, td {
+          text-align: left;
+          padding: 8px;
+        }
+        th {
+          background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+      </style>
+</head>
+<body>
+    <h1>Deep Learning for Image Tampering Detection</h1>
+<p>This project aims to develop a deep learning model that can detect modified images and distinguish them from original images.</p>
+
+<h2>Table of Contents 📖</h2>
+<ul>
+   <li><a href="#what-is-this-🤔">What is this?</a></li>
+   <li><a href="#demo-📺">Demo</a></li>
+   <li><a href="#dataset-💾">Dataset</a></li>
+   <li><a href="#results-📊">Results</a></li>
+   <li><a href="#project-structure-📁">Project Structure</a></li>
+   <li><a href="#requirements-📋">Requirements</a></li>
+   <li><a href="#how-to-use-🚀">How to use</a></li>
+   <li><a href="#built-with-🛠️">Built With</a></li>
+   <li><a href="#license-📄">License</a></li>
+   <li><a href="#how-to-contribute-🤝">How to contribute</a></li>
+   <li><a href="#citing-📜">Citing</a></li>
+   <li><a href="#support-🤝">Support</a></li>
+   <li><a href="#author-✒️">Author</a></li>
+   <li><a href="#bibliography-📚">Bibliography</a></li>
+</ul>
+
+<h2 id="what-is-this-🤔">What is this? 🤔</h2>
+<p>This repository showcases the work and results of implementing a deep learning model using TensorFlow. 
+    The primary objective of this project is to detect whether an image has been modified, either by software 
+    or by an AI, with the aim of combating the spread of fake news. By leveraging advanced techniques in 
+    deep learning, the model is trained to analyze image features and accurately classify images as either 
+    authentic or modified. The repository provides a comprehensive overview of the model architecture, training 
+    process, evaluation metrics, and the implementation code. The ultimate goal is to contribute to the development 
+    of tools that can aid in verifying the authenticity of images, thereby helping to mitigate the impact of fake news 
+    in various domains.</p>
+<p>If you would like to delve deeper into the details of this project, you can refer to the accompanying paper, 
+    which can be accessed at the following link: 
+    <a href="./doc/Final_Report_of_Bachelor_Thesis.pdf">
+        Paper</a>. The paper provides comprehensive information about the methodology, experimental setup, 
+        results, and analysis, offering a more in-depth understanding of the project's contributions and findings.</p>
+
+<h2 id="demo-📺">Demo 📺</h2>
+<p><a href="https://youtu.be/TBBw0aDBIbg"><img src="https://img.youtube.com/vi/TBBw0aDBIbg/maxresdefault.jpg" alt="Watch the video"></a></p>
+
+<h2 id="dataset-💾">Dataset 💾</h2>
+
+<p>The dataset used in this project is the <a href="https://www.kaggle.com/datasets/sophatvathana/casia-dataset">Casia dataset</a>, which contains 12,614 images. The images are divided into two folders: Au (original images) and Tp (modified images).</p>
+
+<p>Alternatively, you can download it from <a href="https://1drv.ms/f/s!ApMviAlZmRwE6gLHz13fOw0uT04H?e=IQRgMS">here</a> where you will have the exact same dataset as the one used in this project, with some minor modifications.</p>
+
+<p>The dataset includes different categories of images, such as:</p>
+
+<ul>
+   <li>ani: (animal)</li>
+   <li>arc: (architecture)</li>
+   <li>art: (art)</li>
+   <li>cha: (characters)</li>
+   <li>nat: (nature)</li>
+   <li>pla: (plants)</li>
+   <li>sec: (sections)</li>
+   <li>txt: (texture)</li>
+</ul>
+
+<pre>
+├── dataset
+│   ├── Au
+│   │   ├── Au_ani_00001.jpg
+│   │   ├── Au_ani_00002.jpg
+│   │   ├── ... 
+│   ├── Tp
+│   │   ├── Tp_D_CND_M_N_ani00018_sec00096_00138.jpg
+│   │   ├── Tp_D_CND_M_N_art00076_art00077_10289.jpg
+│   │   ├── ...
+</pre>
+
+<p>To create the dataset with tampered images, it is important to note that we have two subcategories within the main categories:</p>
+
+<ul>
+   <li>D: Different</li>
+   <li>S: Same</li>
+</ul>
+
+<p>This is because images can be modified in two ways:</p>
+
+<ul>
+   <li>Different: The image is modified using another image.</li>
+   <li>Same: The image is modified using the same image.</li>
+</ul>
+
+<h2 id="results-📊">Results 📊</h2>
+  <p>Various experiments have been conducted with different architectures and image preprocessing techniques. 
+    The first part of the text represents the architecture used, while the last part represents the image preprocessing 
+    technique. E stands for Error Level Analysis, W stands for Wavelet, and YUV stands for utilizing the YUV color space.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Épocas</th>
+            <th>Tiempo por Época</th>
+            <th>Accuracy</th>
+            <th>Loss</th>
+            <th>Precisión</th>
+            <th>Recall</th>
+            <th>AUC</th>
+            <th>PRC</th>
+            <th>F1-Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ENB1_v2_E</td>
+            <td>13</td>
+            <td>99s</td>
+            <td>0.93</td>
+            <td>0.21</td>
+            <td>0.95</td>
+            <td>0.94</td>
+            <td>0.98</td>
+            <td>0.98</td>
+            <td>0.93</td>
+          </tr>
+          <tr>
+            <td>ENB3_E</td>
+            <td>14</td>
+            <td>126s</td>
+            <td>0.92</td>
+            <td>0.20</td>
+            <td>0.95</td>
+            <td>0.90</td>
+            <td>0.98</td>
+            <td>0.98</td>
+            <td>0.92</td>
+          </tr>
+          <tr>
+            <td>XC_E</td>
+            <td>12</td>
+            <td>147s</td>
+            <td>0.90</td>
+            <td>0.55</td>
+            <td>0.90</td>
+            <td>0.93</td>
+            <td>0.93</td>
+            <td>0.94</td>
+            <td>0.92</td>
+          </tr>
+          <tr>
+            <td>MN_E</td>
+            <td>12</td>
+            <td>64s</td>
+            <td>0.91</td>
+            <td>0.22</td>
+            <td>0.99</td>
+            <td>0.84</td>
+            <td>0.98</td>
+            <td>0.99</td>
+            <td>0.91</td>
+          </tr>
+          <tr>
+            <td>MN_YUV</td>
+            <td>33</td>
+            <td>45s</td>
+            <td>0.92</td>
+            <td>0.23</td>
+            <td>0.90</td>
+            <td>0.92</td>
+            <td>0.97</td>
+            <td>0.97</td>
+            <td>0.91</td>
+          </tr>
+          <tr>
+            <td>ENVB2_E</td>
+            <td>31</td>
+            <td>104s</td>
+            <td>0.89</td>
+            <td>0.30</td>
+            <td>0.84</td>
+            <td>0.98</td>
+            <td>0.97</td>
+            <td>0.97</td>
+            <td>0.91</td>
+          </tr>
+          <tr>
+            <td>ENB1_E</td>
+            <td>31</td>
+            <td>100s</td>
+            <td>0.89</td>
+            <td>0.31</td>
+            <td>0.85</td>
+            <td>0.84</td>
+            <td>0.97</td>
+            <td>0.97</td>
+            <td>0.90</td>
+          </tr>
+          <tr>
+            <td>XC_YUV</td>
+            <td>20</td>
+            <td>130s</td>
+            <td>0.82</td>
+            <td>0.83</td>
+            <td>0.78</td>
+            <td>0.98</td>
+            <td>0.91</td>
+            <td>0.90</td>
+            <td>0.87</td>
+          </tr>
+          <tr>
+            <td>V16_E</td>
+            <td>15</td>
+            <td>25s</td>
+            <td>0.87</td>
+            <td>0.38</td>
+            <td>0.80</td>
+            <td>0.86</td>
+            <td>0.93</td>
+            <td>0.87</td>
+            <td>0.83</td>
+          </tr>
+          <tr>
+            <td>ENV2B1_E</td>
+            <td>29</td>
+            <td>60s</td>
+            <td>0.78</td>
+            <td>0.68</td>
+            <td>0.71</td>
+            <td>1</td>
+            <td>0.95</td>
+            <td>0.94</td>
+            <td>0.83</td>
+          </tr>
+          <tr>
+            <td>ENB1_YUV</td>
+            <td>18</td>
+            <td>104s</td>
+            <td>0.63</td>
+            <td>0.69</td>
+            <td>0.62</td>
+            <td>1</td>
+            <td>0.49</td>
+            <td>0.58</td>
+            <td>0.77</td>
+          </tr>
+          <tr>
+            <td>R50_E</td>
+            <td>7</td>
+            <td>32s</td>
+            <td>0.83</td>
+            <td>0.46</td>
+            <td>0.81</td>
+            <td>0.72</td>
+            <td>0.93</td>
+            <td>0.88</td>
+            <td>0.76</td>
+          </tr>
+          <tr>
+            <td>XC_W</td>
+            <td>11</td>
+            <td>158s</td>
+            <td>0.62</td>
+            <td>0.61</td>
+            <td>0.62</td>
+            <td>1</td>
+            <td>0.50</td>
+            <td>0.62</td>
+            <td>0.76</td>
+          </tr>
+          <tr>
+            <td>V16_W</td>
+            <td>20</td>
+            <td>108s</td>
+            <td>0.62</td>
+            <td>0.67</td>
+            <td>0.62</td>
+            <td>1</td>
+            <td>0.50</td>
+            <td>0.62</td>
+            <td>0.76</td>
+          </tr>
+          <tr>
+            <td>ENB1_W</td>
+            <td>16</td>
+            <td>125s</td>
+            <td>0.61</td>
+            <td>0.67</td>
+            <td>0.91</td>
+            <td>1</td>
+            <td>0.49</td>
+            <td>0.60</td>
+            <td>0.76</td>
+          </tr>
+          <tr>
+            <td>V16_YUV</td>
+            <td>14</td>
+            <td>89s</td>
+            <td>0.63</td>
+            <td>0.65</td>
+            <td>0.65</td>
+            <td>0.90</td>
+            <td>0.61</td>
+            <td>0.70</td>
+            <td>0.75</td>
+          </tr>
+          <tr>
+            <td>Scrath_W</td>
+            <td>15</td>
+            <td>42s</td>
+            <td>0.60</td>
+            <td>0.68</td>
+            <td>0.56</td>
+            <td>1</td>
+            <td>0.50</td>
+            <td>0.60</td>
+            <td>0.75</td>
+          </tr>
+          <tr>
+            <td>MN_W</td>
+            <td>20</td>
+            <td>67s</td>
+            <td>0.60</td>
+            <td>0.68</td>
+            <td>0.60</td>
+            <td>1</td>
+            <td>0.50</td>
+            <td>0.60</td>
+            <td>0.75</td>
+          </tr>
+          <tr>
+            <td>R50_W</td>
+            <td>14</td>
+            <td>90s</td>
+            <td>0.60</td>
+            <td>0.68</td>
+            <td>0.60</td>
+            <td>1</td>
+            <td>0.50</td>
+            <td>0.60</td>
+            <td>0.75</td>
+          </tr>
+          <tr>
+            <td>Scrath_E</td>
+            <td>12</td>
+            <td>36s</td>
+            <td>0.60</td>
+            <td>0.69</td>
+            <td>0.57</td>
+            <td>1</td>
+            <td>0.49</td>
+            <td>0.60</td>
+            <td>0.74</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Visual Results</h3>
+      <p>Visual results have been obtained to provide a visual representation of the potential modifications made. The best result 
+        is showcased, highlighting the specific modification that has been implemented. These visual results serve as a 
+        demonstration of how the modifications impact the overall output.</p>
+      <img src="./resources/grad-cam.png" 
+      alt="grad-cam">
+    
+      <h3>Confusion Matrix</h3>
+      <p>The confusion matrix will be presented to further analyze and understand the test results. The confusion matrix provides 
+        a detailed breakdown of the model's predictions, showing the number of true positive, true negative, false positive, 
+        and false negative instances. It offers valuable information on the model's performance, allowing for a deeper 
+        understanding of its accuracy and potential areas of improvement.</p>
+      <img src="./resources/confusion_matrix.png" alt="confusion matrix">
+    
+      <h3>Model Training Process</h3>
+      <p>The model training process was completed in approximately 25 minutes. The training and validation 
+        metrics are provided to evaluate the performance of the model. These metrics offer insights into how 
+        well the model was trained and how it performed on both the training and validation datasets.</p>
+      <img src="./resources/metrics.png" 
+      alt="metrics">
+
+    <h2 id="project-structure-📁">Project Structure 📁</h2>
+    <pre>
+          ├── dataset
+          │   ├── Au
+          │   │   ├── Au_ani_00001.jpg
+          │   │   ├── Au_ani_00002.jpg
+          │   │   ├── ...
+          │   ├── Tp
+          │   │   ├── Tp_D_CND_M_N_ani00018_sec00096_00138.jpg
+          │   │   ├── Tp_D_CND_M_N_art00076_art00077_10289.jpg
+          │   │   ├── ...
+          │   ├── test
+          │   │   ├── me_x_3.jpg
+          │   │   ├── edited_by_ia.jpg
+          │   ├── gitignore
+          ├── model
+          │   ├── checkpoints
+          │   ├── logs
+          │   ├── custom_models
+          │   │   ├── efficientnetB3
+          │   │   │   ├── model_arquitecture.json
+          │   │   │   ├── model_weights.h5
+          │   │   ├── mobilenet
+          │   │   │   ├── model_arquitecture.json
+          │   │   │   ├── model_weights.h5
+          │   ├── ela_models
+          │   │   ├── detect_manipulated_images_model_scratch.h5
+          │   │   ├── ...
+          │   ├── wavelet_models
+          │   │   ├── detect_manipulated_images_model_scratch.h5
+          │   │   ├── ...
+          │   ├── yuv_models
+          │   │   ├── detect_manipulated_images_model_efficientNetB1.h5
+          │   │   ├── ...
+          │   ├── gitignore
+          ├── doc
+          │   ├── Final_Report_of_Bachelor_Thesis.pdf
+          │   ├── Gantt_diagram.xlsx
+          ├── src
+          │   ├── analisys.ipynb
+          │   ├── model_custom.ipynb
+          │   ├── models_ela_custom.ipynb
+          │   ├── models_ela.ipynb
+          │   ├── models_wavelet.ipynb
+          │   ├── models_yuv_custom.ipynb
+          ├── result
+          │   ├── ela_models
+          │   │   ├── confusion_matrix
+          │   │   │   ├── confusion_matrix.png
+          │   │   │   ├── ...
+          │   │   ├── heatmap
+          │   │   │   ├── heatmap.png
+          │   │   │   ├── ...
+          │   │   ├── metrics
+          │   │   │   ├── metrics.png
+          │   │   │   ├── ...
+          │   ├── wavelet_models
+          │   │   ├── confusion_matrix
+          │   │   │   ├── confusion_matrix.png
+          │   │   │   ├── ...
+          │   │   ├── metrics
+          │   │   │   ├── metrics.png
+          │   │   │   ├── ...
+          ├── gitignore
+          ├── LICENSE
+          ├── README.md
+          ├── requirements.txt
+        </pre>
+    
+    <h2 id="requirements-📋">Requirements 📋</h2>
+    <ul>
+      <li>Python 3.9</li>
+      <li>All the required libraries are in the requirements.txt file
+        <ul>
+          <li>opencv-python</li>
+          <li>numpy</li>
+          <li>matplotlib</li>
+          <li>Pillow</li>
+          <li>Pandas</li>
+          <li>kaggle</li>
+          <li>tensorflow</li>
+          <li>scikit-learn</li>
+          <li>PyWavelets</li>
+          <li>keras-tuner</li>
+        </ul>
+      </li>
+    </ul>
+    <p>If you don't have some of these libraries, you can install them manually or by running the following command:</p>
+    <pre><code>pip install -r requirements.txt</code></pre>
+
+    <h2 id="how-to-use-🚀">How to use 🚀</h2>
+    <ol>
+      <li>Clone this repo.
+        <pre><code>git clone https://github.com/migueldemollet/real-or-fake-image-machine-learning.git</code></pre>
+      </li>
+      <li>Go to the directory.
+        <pre><code>cd real-or-fake-image-machine-learning</code></pre>
+      </li>
+      <li>Install the required libraries.
+        <ul>
+          <li>using pip :
+            <pre><code>pip install -r requirements.txt</code></pre>
+          </li>
+          <li>using conda :
+            <pre><code>conda install --file requirements.txt</code></pre>
+          </li>
+        </ul>
+      </li>
+      <li>Run the code.
+        <pre><code>python3 src/main.py</code></pre>
+      </li>
+    </ol>
+
+    <h2 id="built-with-🛠️">Built With 🛠️</h2>
+    <ul>
+      <li>vscode - The code editor used</li>
+    </ul>
+
+    <h2 id="license-📄">License 📄</h2>
+    <p>This project is under the MIT License - see the <a href="./LICENSE">LICENSE</a> file for details</p>
+
+    <h2 id="how-to-contribute-🤝">How to contribute 🤝</h2>
+    <p>If you want to contribute to this project, you create a pull request. All contributions are welcome.</p>
+
+    <h2 id="support-🤝">Support 🤝</h2>
+    <ul>
+      <li><strong>Jordi Serra Raiz</strong> - Tutor of the project - <a href="https://www.linkedin.com/in/jordiserraruiz/">Jordi Serra Raiz</a></li>
+      <li><strong>Laia Guerreo Candela</strong> - Provider of AI-generated modified images and logo design. - <a href="https://www.linkedin.com/in/laiaguerrerocandela/">Laia Guerreo Candela</a></li>
+    </ul>
+
+    <h2 id="author-✒️">Author ✒️</h2>
+    <ul>
+      <li><strong>Miguel del Arco</strong> - <a href="https://github.com/migueldemollet">migueldemollet</a></li>
+    </ul>
+    
+    <h2 id="bibliography-📚">Bibliography 📚</h2>
+    <ol>
+        <li>Adoble. Adoble Analytics, <a href="https://acortar.link/2Qtak9">Link</a>, 2012.</li>
+        <li>Raúl Álvarez. Adobe, el creador de Photoshop, está desarrollando software para detectar imágenes manipuladas... con Photoshop, <a href="https://acortar.link/PeLl6m">Link</a>, 2018.</li>
+        <li>Sheng-Yu Wang, Oliver Wang, Andrew Owens, Richard Zhang, Alexei A. Efros. Detecting Photoshopped Faces by Scripting Photoshop. ICCV, 2019.</li>
+        <li>Thanh Thi Nguyen, Quoc Viet Hung Nguyen, Dung Tien Nguyen, Duc Thanh Nguyen, Thien Huynh-The, Saeid Nahavandi, Thanh Tam Nguyen, Quoc-Viet Pham, Cuong M. Nguyen. Deep Learning for Deepfakes Creation and Detection: A Surveyl, <em>arXiv:1909.11573</em>, 2022.</li>
+        <li>Andreas Rössler, Davide Cozzolino, Luisa Verdoliva, Christian Riess, Justus Thies, Matthias Nießner. FaceForensics++: Learning to Detect Manipulated Facial Images, <em>arXiv:1901.08971</em>, 2019.</li>
+        <li>NPHAT SOVATHANA. casia dataset v2, <a href="https://www.kaggle.com/datasets/sophatvathana/casia-dataset">Link</a>, 2018.</li>
+        <li>NPHAT SOVATHANA. casia dataset v1, <a href="https://www.kaggle.com/datasets/sophatvathana/casia-dataset">Link</a>, 2018.</li>
+        <li>MarsAnalysisProject. Image Forensics, <a href="https://forensics.map-base.info/report_2/index_en.shtml">Link</a>, 2016.</li>
+        <li>Koushik Chandrasekaran. 2D-Discrete Wavelet Transformation and its applications in Digital Image Processing using MATLAB, <a href="https://acortar.link/cq8jPp">Link</a>, 2021.</li>
+        <li>Wikipedia. YUV, <a href="https://en.wikipedia.org/wiki/YUV">Link</a>, 2004.</li>
+        <li>Jason Brownlee. Use Early Stopping to Halt the Training of Neural Networks At the Right Time, <a href="https://acortar.link/w8QGLe">Link</a>, 2020.</li>
+        <li>Xue Ying. An Overview of Overfitting and its Solutions, <em>10.1088/1742-6596/1168/2/022022</em>, 2019.</li>
+        <li>B. Chen. Early Stopping in Practice: an example with Keras and TensorFlow 2.0, <a href="https://acortar.link/ccPyUl">Link</a>, 2020.</li>
+        <li>Tokio School. Analizamos qué es y para qué se usa el Transfer Learning en el Deep Learning, <a href="https://www.tokioschool.com/noticias/transfer-learning/">Link</a>, 2022.</li>
+        <li>DataScientest. ¿Qué es el método Grad-CAM?, <a href="https://datascientest.com/es/que-es-el-metodo-grad-cam">Link</a>, 2022.</li>
+        <li>fchollet. Grad-CAM class activation visualization, <a href="https://keras.io/examples/vision/grad_cam/">Link</a>, 2020.</li>
+        <li>Mingxing Tan, Quoc V. Le. EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks, <em>arXiv:1905.11946</em>, 2019.</li>
+        <li>Aditya Ramesh, Prafulla Dhariwal, Alex Nichol, Casey Chu, Mark Chen. Hierarchical Text-Conditional Image Generation with CLIP Latents, <em>arXiv:2204.06125</em>, 2022.</li>
+        <li>Jonas Oppenlaender. The Creativity of Text-to-Image Generation, <em>arXiv:2206.02904</em>, 2022.</li>
+    </ol>
+</body>
+</html>
