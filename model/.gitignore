@@ -1,6 +1,6 @@
 # Ignore everything in this directory
 *
 # Except this file
+!ela_models/
+!ela_models/detect_manipulated_images_model_EfficientNetB1.h5
 !.gitignore
-!/checkpoints/
-!/logs/
