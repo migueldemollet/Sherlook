@@ -1,4 +1,2 @@
-# Ignore everything in this directory except test folder
-*
-!test/
-!.gitignore
+Au/
+Tp/
