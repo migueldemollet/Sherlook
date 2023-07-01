@@ -1,3 +1,6 @@
+<img src="https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/resource/sherlook-logo.png" align="right" width="300" alt="header pic"/>
+
+
 # Deep Learning for Image Tampering Detection
 This project aims to develop a deep learning model that can detect modified images and distinguish them from original images.
 
