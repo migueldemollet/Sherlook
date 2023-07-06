@@ -1,8 +1,8 @@
 <img src="https://github.com/migueldemollet/real-or-fake-image-machine-learning/blob/main/resource/sherlook-logo.png" align="right" width="300" alt="header pic"/>
 
 
-# Deep Learning for Image Tampering Detection
-This project aims to develop a deep learning model that can detect modified images and distinguish them from original images.
+# SHERLOOK
+SHERLOOK is an advanced Deep Learning model that provides users with a powerful tool to detect fake news by identifying images as either original or modified, while also indicating potential areas of alteration.
 
 # Table of Contents 📖
    * [What is this?](#what-is-this-🤔)
@@ -144,6 +144,7 @@ All the code is located in the src folder. The dataset is located in the dataset
 ├── doc
 │   ├── Final_Report_of_Bachelor_Thesis.pdf
 │   ├── Gantt_diagram.xlsx
+│   ├── poster.png
 ├── src
 │   ├── analisys.ipynb
 │   ├── model_custom.ipynb
